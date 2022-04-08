@@ -7,7 +7,7 @@ html, body{
 }
 
 .button {
-	padding: $spacing3 $spacing4;
+	padding: $spacing3 $spacing5;
 	font-weight: bold;
 	line-height: 1;
 	font-size: $font-size-sm;
@@ -16,4 +16,130 @@ html, body{
 .button-icon {
 	color: $black;
 	position: relative;
+}
+
+.color-bg-grass{
+    background-color: $grass-bg;
+}
+.color-label-grass{
+    background-color: $grass-label;
+}
+
+.color-bg-bug{
+    background-color: $bug-bg;
+}
+.color-label-bug{
+    background-color: $bug-label;
+}
+
+.color-bg-dragon{
+    background-color: $dragon-bg;
+}
+.color-label-dragon{
+    background-color: $dragon-label;
+}
+
+.color-bg-fairy{
+    background-color: $fairy-bg;
+}
+.color-label-fairy{
+    background-color: $fairy-label;
+}
+
+.color-bg-fire{
+    background-color: $fire-bg;
+}
+.color-label-fire{
+    background-color: $fire-label;
+}
+
+.color-bg-ghost{
+    background-color: $ghost-bg;
+}
+.color-label-ghost{
+    background-color: $ghost-label;
+}
+
+.color-bg-ground{
+    background-color: $ground-bg;
+}
+.color-label-ground{
+    background-color: $ground-label;
+}
+
+.color-bg-normal{
+    background-color: $normal-bg;
+}
+.color-label-normal{
+    background-color: $normal-label;
+}
+
+.color-bg-psychic{
+    background-color: $psychic-bg;
+}
+.color-label-psychic{
+    background-color: $psychic-label;
+}
+
+.color-bg-steel{
+    background-color: $steel-bg;
+}
+.color-label-steel{
+    background-color: $steel-label;
+}
+
+.color-bg-dark{
+    background-color: $dark-bg;
+}
+.color-label-dark{
+    background-color: $dark-label;
+}
+
+.color-bg-electric{
+    background-color: $electric-bg;
+}
+.color-label-electric{
+    background-color: $electric-label;
+}
+
+.color-bg-fighting{
+    background-color: $fighting-bg;
+}
+.color-label-fighting{
+    background-color: $fighting-label;
+}
+
+.color-bg-flying{
+    background-color: $flying-bg;
+}
+.color-label-flying{
+    background-color: $flying-label;
+}
+
+.color-bg-water{
+    background-color: $water-bg;
+}
+.color-label-water{
+    background-color: $water-label;
+}
+
+.color-bg-ice{
+    background-color: $ice-bg;
+}
+.color-label-ice{
+    background-color: $ice-label;
+}
+
+.color-bg-poison{
+    background-color: $poison-bg;
+}
+.color-label-poison{
+    background-color: $poison-label;
+}
+
+.color-bg-rock{
+    background-color: $rock-bg;
+}
+.color-label-rock{
+    background-color: $rock-label;
 }

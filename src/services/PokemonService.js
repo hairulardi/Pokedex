@@ -6,7 +6,7 @@ const BASE_URL = HttpCOnfig.getBaseURL();
 
 export default {
     getPokemonList(){
-        let url = BASE_URL + '/pokemon/';
+        let url = `${BASE_URL}/pokemon`;
 
         return axios.get(url).then(response => {
             let data = response.data.results
@@ -24,7 +24,7 @@ export default {
     },
 
     getPokemonById(id){
-        let url = BASE_URL + '/pokemon/' + id;
+        let url = `${BASE_URL}/pokemon/${id}`;
 
         return axios.get(url).then(response => {
             return new PokemonModel(response.data);

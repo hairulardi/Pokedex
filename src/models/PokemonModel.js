@@ -1,13 +1,19 @@
 export default class PokemonModel {
     constructor(response){
-        this.id = response.id;
-        this.name = response.name;
-        this.stats = this.setStats(response.stats);
-        this.types = this.setTypes(response.types);
-        this.height = this.setWeight(response.weight);
-        this.weight = this.setHeight(response.height);
-        this.artwork = this.setArtworkUrl(response.sprites.other);
+        this.id        = response.id;
+        this.name      = response.name;
+        this.code      = this.setCode(response.id);
+        this.stats     = this.setStats(response.stats);
+        this.types     = this.setTypes(response.types);
+        this.height    = this.setWeight(response.weight);
+        this.weight    = this.setHeight(response.height);
+        this.artwork   = this.setArtworkUrl(response.sprites.other);
         this.abilities = this.setAbilities(response.abilities);
+    }
+
+    setCode(id){
+        let str = id.toString()
+        return '#' + str.padStart(3, '0')
     }
 
     setWeight(weight){
