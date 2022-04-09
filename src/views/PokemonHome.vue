@@ -45,8 +45,6 @@
         let element = scrollComponent.value;
         let bottom = element.getBoundingClientRect().bottom - 15;
 
-        console.log(bottom, window.innerHeight, (bottom < window.innerHeight))
-
         if ( (bottom < window.innerHeight) && !onActiveLoad.value && (pokemonData.value.length < total.value) ) {
             onActiveLoad.value = true;
             
