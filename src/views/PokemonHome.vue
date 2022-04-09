@@ -3,6 +3,10 @@
 
     <div class="page-content" ref="scrollComponent">
         <PokemonListItem v-for="(item, index) of pokemonData" v-bind:key="index" v-bind:data="item" />
+
+        <div v-if="pokemonData.length < total" class="loading-bar">
+            Loading...
+        </div>
     </div>
 </template>
 
@@ -55,3 +59,12 @@
     };
 
 </script>
+
+<style lang="scss" scoped>
+@import "@/styles/variables";
+.loading-bar{
+    text-align: center;
+    font-weight: 600;
+    padding: 0 0 $spacing4;
+}
+</style>
