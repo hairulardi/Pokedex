@@ -6,7 +6,7 @@ const BASE_URL = HttpCOnfig.getBaseURL();
 
 export default {
     getPokemonList(nextUrl = null){
-        let url = nextUrl ? nextUrl : `${BASE_URL}/pokemon`;
+        let url = nextUrl ? nextUrl : `${BASE_URL}/pokemon/?offset=0&limit=30`;
 
         return axios.get(url).then(response => {
             let data = response.data.results
