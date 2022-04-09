@@ -7,7 +7,9 @@
 
             <span class="header-title">{{ title }}</span>
         </div>
-        <div class="header-right"></div>
+        <div class="header-right" v-if="props.total">
+            <div class="header-counter">({{ props.loaded }}/{{ props.total }})</div>
+        </div>
     </header>
 </template>
 
@@ -16,7 +18,9 @@
 
     const props = defineProps({
         title: String,
-        back: Boolean
+        back: Boolean,
+        loaded: Number,
+        total: Number
     })
 </script>
 
@@ -49,6 +53,11 @@ header, .header-left{
     &-title{
         text-transform: capitalize;
         font-size: 1.5rem;
+        font-weight: 600;
+        padding: .7rem $spacing5;
+    }
+
+    &-counter{
         font-weight: 600;
         padding: .7rem $spacing5;
     }

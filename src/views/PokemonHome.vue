@@ -1,5 +1,5 @@
-<template>
-    <HeaderApp title="Pokedex"/>
+<template v-if="showPage">
+    <HeaderApp title="Pokedex" :loaded="pokemonData.length" :total="total"/>
 
     <div class="page-content" ref="scrollComponent">
         <PokemonListItem v-for="(item, index) of pokemonData" v-bind:key="index" v-bind:data="item" />
@@ -12,8 +12,9 @@
     import PokemonListItem from '@/components/PokemonListItem.vue';
     import PokemonService from '@/services/PokemonService.js';
 
+    const showPage = ref(false);
     const scrollComponent = ref(null);
-    const pokemonData = ref(null);
+    const pokemonData = ref([]);
     const onActiveLoad = ref(false);
     const nextPage = ref(null);
     const total = ref(0)
@@ -32,6 +33,7 @@
             pokemonData.value = response.data;
             nextPage.value = response.next;
             total.value = response.total;
+            showPage.value = true;
         });
     }
 
