@@ -6,6 +6,10 @@ html, body{
     color: $black;
 }
 
+.page-content{
+    padding: $spacing3 $spacing5 0;
+}
+
 .button {
 	padding: $spacing3 $spacing5;
 	font-weight: bold;
@@ -142,4 +146,66 @@ html, body{
 }
 .color-label-rock{
     background-color: $rock-label;
+}
+
+.pokemon-wrapper-label{
+    padding: 0;
+    margin: 0;
+
+    li{
+        list-style-type: none;
+        display: inline-block;
+        // background-color: $black;
+        margin-right: 5px;
+        border-radius: 15px;
+        padding: 4px 7px;
+        font-size: .7rem;
+        font-weight: 500;
+        color: $white;
+        text-transform: capitalize;
+    }
+}
+
+ol, ul {
+	list-style: none;
+}
+
+fieldset, ol, ul {
+	margin: 0;
+	padding: 0;
+}
+
+.statbar {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1rem;
+}
+.statbar > :first-child {
+	display: flex;
+	margin-bottom: .2rem;
+}
+.statbar__label {
+	flex: 1 1;
+	margin-right: .5rem;
+	color: #4a5568;
+    text-transform: capitalize;
+}
+.statbar__value {
+	flex: none;
+    text-transform: capitalize;
+}
+.statbar__bar, .statbar__bar__value {
+	height: .5rem;
+	border-radius: .5rem;
+}
+.statbar__bar {
+	width: 100%;
+	background-color: #cbd5e0;
+	position: relative;
+}
+.statbar__bar__value {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #3182ce;
 }

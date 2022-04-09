@@ -1,10 +1,13 @@
 <template>
+    <HeaderApp title="Pokedex"/>
+
     <div class="page-content">
         <PokemonListItem v-for="(item, index) of state.data" v-bind:key="index" v-bind:data="item" />
     </div>
 </template>
 
 <script setup>
+    import HeaderApp from '@/components/HeaderApp.vue';
     import { onMounted, reactive } from 'vue';
     import PokemonListItem from './PokemonListItem.vue';
     import PokemonService from '@/services/PokemonService.js';
@@ -24,10 +27,3 @@
         });
     }
 </script>
-
-<style lang="scss" scoped>
-@import "@/styles/variables";
-.page-content{
-    padding: 0 $spacing5;
-}
-</style>

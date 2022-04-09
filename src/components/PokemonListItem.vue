@@ -1,7 +1,10 @@
 <template>
-    <a href="#">
+    <RouterLink v-bind:to="{
+        name: 'detail',
+        params: {pokemon: props.data.name}
+    }">
         <article class="pokemon-wrapper" v-bind:class="getBgClass()">
-            <img v-bind:src="props.data.artwork" alt="pokemon">
+            <img v-bind:src="props.data.artwork" v-bind:alt="props.data.name">
 
             <div class="pokemon-wrapper-body">
                 <p class="pokemon-wrapper-code">{{ props.data.code }}</p>
@@ -14,12 +17,12 @@
                 </figure>
             </div>
         </article>
-    </a>
+    </RouterLink>
 </template>
 
 
 <script setup>
-    import { reactive } from 'vue';
+    import { RouterLink } from 'vue-router'
 
     const props = defineProps({
         data: {
@@ -28,18 +31,13 @@
         }
     })
 
-    const state = reactive({
-        labelClass: String,
-        bgClass: String
-    })
-
     function getBgClass(){
         let type = props.data.types[0]
-        return state.bgClass = `color-bg-${type}`
+        return `color-bg-${type}`
     }
 
     function getLabelClass(type){
-        return state.labelClass = `color-label-${type}`
+        return `color-label-${type}`
     }
 </script>
 
@@ -91,24 +89,6 @@ a{
         margin-left: 0;
         margin-right: 0;
         margin-top: 6px;
-    }
-
-    ul.pokemon-wrapper-label{
-        padding: 0;
-        margin: 0;
-
-        li{
-            list-style-type: none;
-            display: inline-block;
-            // background: $black;
-            margin-right: 5px;
-            border-radius: 15px;
-            padding: 4px 7px;
-            font-size: .7rem;
-            font-weight: 500;
-            color: $white;
-            text-transform: capitalize;
-        }
     }
 }
 </style>

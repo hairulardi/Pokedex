@@ -1,9 +1,8 @@
 <template>
     <header>
         <div class="header-left">
-            <a class="button button-icon" href="#/">
+            <a v-if="props.back" class="button button-icon" href="#" @click="$router.go(-1)">
                 <IconBack />
-                <!-- <span class="visually-hidden">Back</span> -->
             </a>
 
             <span class="header-title">{{ title }}</span>
@@ -15,11 +14,10 @@
 <script setup>
     import IconBack from './icons/IconBack.vue'
 
-    // defineProps({
-    //     title: {
-    //         type: String
-    //     }
-    // })
+    const props = defineProps({
+        title: String,
+        back: Boolean
+    })
 </script>
 
 <style lang="scss" scoped>
@@ -45,6 +43,7 @@ header, .header-left{
     &-title{
         text-transform: capitalize;
         font-weight: 600;
+        padding: $spacing3 $spacing5;
     }
 }
 </style>
