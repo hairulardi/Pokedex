@@ -1,5 +1,5 @@
 <template v-if="showPage">
-    <HeaderApp title="Pokedex" :loaded="pokemonData.length" :total="total"/>
+    <HeaderApp title="Pokédex" :loaded="pokemonData.length" :total="total"/>
 
     <div class="page-content" ref="scrollComponent">
         <PokemonListItem v-for="(item, index) of pokemonData" v-bind:key="index" v-bind:data="item" />
@@ -52,8 +52,6 @@
                 pokemonData.value.push(...response.data);
                 nextPage.value = response.next;
                 onActiveLoad.value = false;
-
-                // console.log(pokemonData.value)
             });
         }
     };
