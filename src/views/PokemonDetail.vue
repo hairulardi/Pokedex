@@ -1,4 +1,6 @@
 <template>
+    <OverlayApp v-if="state.showOverlay" />
+
     <HeaderApp :back="true" v-if="state.data.types" v-bind:class="getBgClass(state.data.types[0])"/>
 
     <div class="page-content">
@@ -55,6 +57,7 @@
     import { onMounted, reactive } from 'vue';
     import PokemonService from '@/services/PokemonService.js';
     import HeaderApp from '@/components/HeaderApp.vue';
+    import OverlayApp from '@/components/OverlayApp.vue';
 
     const props = defineProps({
         pokemon: {
@@ -64,7 +67,8 @@
     })
 
     const state = reactive({ 
-        data: Object
+        data: Object,
+        showOverlay: true
     })
 
     onMounted(() => {
@@ -75,6 +79,7 @@
         PokemonService.getPokemonByName(name).then(response => {
             // console.log(response);
             state.data = response
+            state.showOverlay = false;
         });
     }
 

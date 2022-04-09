@@ -1,4 +1,6 @@
-<template v-if="showPage">
+<template>
+    <OverlayApp v-if="showOverlay" />
+
     <HeaderApp title="Pokédex" :loaded="pokemonData.length" :total="total"/>
 
     <div class="page-content" ref="scrollComponent">
@@ -13,10 +15,11 @@
 <script setup>
     import { onMounted, onUnmounted, ref } from 'vue';
     import HeaderApp from '@/components/HeaderApp.vue';
+    import OverlayApp from '@/components/OverlayApp.vue';
     import PokemonListItem from '@/components/PokemonListItem.vue';
     import PokemonService from '@/services/PokemonService.js';
 
-    const showPage = ref(false);
+    const showOverlay = ref(true);
     const scrollComponent = ref(null);
     const pokemonData = ref([]);
     const onActiveLoad = ref(false);
@@ -37,7 +40,7 @@
             pokemonData.value = response.data;
             nextPage.value = response.next;
             total.value = response.total;
-            showPage.value = true;
+            showOverlay.value = false;
         });
     }
 
