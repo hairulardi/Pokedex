@@ -73,7 +73,7 @@
 
     function getPokemonByName(name) {
         PokemonService.getPokemonByName(name).then(response => {
-            console.log(response);
+            // console.log(response);
             state.data = response
         });
     }
@@ -83,8 +83,6 @@
     }
 
     function getBgClass(type){
-        // console.log(state.data)
-        // let type = state.data.types[0]
         return `color-bg-${type}`
     }
 </script>

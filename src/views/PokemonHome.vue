@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-    import HeaderApp from '@/components/HeaderApp.vue';
     import { onMounted, reactive } from 'vue';
-    import PokemonListItem from './PokemonListItem.vue';
+    import HeaderApp from '@/components/HeaderApp.vue';
+    import PokemonListItem from '@/components/PokemonListItem.vue';
     import PokemonService from '@/services/PokemonService.js';
 
     const state = reactive({ 
@@ -22,7 +22,7 @@
 
     function getPokemonList() {
         PokemonService.getPokemonList().then(response => {
-            console.log(response);
+            // console.log(response);
             state.data = response
         });
     }
