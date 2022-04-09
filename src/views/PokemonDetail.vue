@@ -132,7 +132,9 @@ figure{
     position: relative;
 
     > img{
-        width: 65%;
+        width: 85%;
+        margin-bottom: -30px;
+        z-index: 2;
     }
 }
 

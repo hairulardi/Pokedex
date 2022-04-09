@@ -79,7 +79,7 @@ a{
         position: absolute;
         right: .1rem;
         font-size: 2.4rem;
-        opacity: 0.3;
+        opacity: 0.2;
         margin: 0;
         bottom: -.5rem;
         font-weight: 500;
