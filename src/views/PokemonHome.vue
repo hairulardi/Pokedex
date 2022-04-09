@@ -43,7 +43,9 @@
 
     const handleScroll = () => {
         let element = scrollComponent.value;
-        let bottom = element.getBoundingClientRect().bottom
+        let bottom = element.getBoundingClientRect().bottom - 15;
+
+        console.log(bottom, window.innerHeight, (bottom < window.innerHeight))
 
         if ( (bottom < window.innerHeight) && !onActiveLoad.value && (pokemonData.value.length < total.value) ) {
             onActiveLoad.value = true;
@@ -63,6 +65,6 @@
 .loading-bar{
     text-align: center;
     font-weight: 600;
-    padding: 0 0 $spacing4;
+    padding: 0 0 15px;;
 }
 </style>
