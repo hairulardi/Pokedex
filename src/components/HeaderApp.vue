@@ -23,10 +23,16 @@
 <style lang="scss" scoped>
 @import "@/styles/main";
 
+header{
+    background-color: $white;
+}
+
 header, .header-left{
     display: flex;
     align-items: center;
-    // background-color: $black;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .header{
@@ -42,8 +48,9 @@ header, .header-left{
 
     &-title{
         text-transform: capitalize;
+        font-size: 1.5rem;
         font-weight: 600;
-        padding: $spacing3 $spacing5;
+        padding: .7rem $spacing5;
     }
 }
 </style>
